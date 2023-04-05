@@ -1,2 +1,2 @@
-# JavaProjects
+# JavaPrograms
 Demo Java Programs
