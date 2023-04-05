@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE xwork PUBLIC
+	"-//Apache Struts//XWork 2.3//EN"
+	"http://struts.apache.org/dtds/xwork-2.3.dtd">
+	
+<struts>
+	<constant name="struts.devMode" value="true"/>
+	<package name="default" extends="struts-default">
+		<action name="register" class="demo.struts.PersonBean">  
+			<interceptor-ref name="timer"/>
+			<interceptor-ref name="exception"/>
+			<result name="success">welcome.jsp</result>  
+			<result name="input">index.jsp</result>  
+
+		</action>  
+
+
+
+	</package>
+
+</struts>
