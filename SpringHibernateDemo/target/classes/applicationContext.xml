@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  
+    xmlns="http://www.springframework.org/schema/tool"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		targetNamespace="http://www.springframework.org/schema/tool"
+		elementFormDefault="qualified">  
+
+<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+<property name="url" value="jdbc:mysql://localhost:3306/satyadb"/>
+<property name="username" value="root"/>
+<property name="password" value="root"/>
+</bean>
+
+<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+<property name="dataSource" ref="dataSource"/>
+<property name="mappingResource" >
+<list>
+	<value>hibernate.hbm.xml</value>
+</list>
+</property>
+<property name="hibernateProperties">
+	<props>  
+      <prop key="hibernate.dialect">org.hibernate.dialect.Oracle9Dialect</prop>  
+      <prop key="hibernate.hbm2ddl.auto">update</prop>  
+      <prop key="hibernate.show_sql">true</prop>  
+	</props>  
+</property>
+</bean>
+
+<bean id="template" class="org.springframework.orm.hibernate.HibernateTemplate">
+<property name="sessiionFactory" ref="sessionFactory"/>
+</bean>
+
+<bean id="pdao" class="PersonDAO">
+<property name="template" ref="template"></property>
+</bean>
+
+
+</beans>

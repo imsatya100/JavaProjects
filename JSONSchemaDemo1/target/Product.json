@@ -1,0 +1,160 @@
+{
+    "productKey": "o7w41303ifxilsg",
+    "userId": 1106,
+    "signerinfo": [{
+            "signerLabel": "Signer 1",
+            "signerOrder": 1,
+            "mandatory": "Y",
+            "addToAddressBook": "Y",
+            "logicRequired": "Y",
+            "commentsForSigner": "Comments to Signer",
+            "rejectionCommentsRequired": "N",
+            "attachPhotoAtApproval": "N",
+            "signatureOptions": {
+                "type": "Y",
+                "draw": "Y",
+                "create": "N",
+                "upload": "Y",
+                "mouse": "Y",
+                "mobileSigning": "N"
+            },
+            "fullname": "Smith",
+            "role": "President",
+            "email": "anjaneyab@sutisoft.in",
+            "sendFullySignedDoctoSigner": "Y",
+            "authenticationType": {
+                "type": "noAuth",
+                "codeAtView": "ref3",
+                "codeAtSigning": "ref3"
+            },
+            "documentsRequiredFromSigner": {
+                "max": 20,
+                "min": 1
+            },
+            "fieldType": [{
+                    "type": "signature",
+                    "mandatory": "Y",
+
+                    "positionAtDoc": [{
+                        "dropPositions": "First",
+                        "top":  "30px",
+                        "left": "30px",
+                        "height": "30px",
+                        "width": "30px"
+
+                    }]
+                },
+                {
+                    "type": "initial",
+                    "mandatory": "Y",
+                    "positionAtDoc": [{
+
+                            "pageNo": 1,
+                            "top": "30px",
+                            "left": "30px",
+                            "height": "30px",
+                            "width": "30px"
+
+                        },
+                        {
+
+                            "pageNo": 2,
+                            "top": "30px",
+                            "left": "30px",
+                            "height": "30px",
+                            "width": "30px"
+
+                        }
+                    ]
+                }
+            ],
+            "phone": 123456
+        },
+        {
+            "signerLabel": "Signer 2",
+            "signerOrder": 1,
+            "mandatory": "N",
+            "addToAddressBook": "Y",
+            "logicRequired": "Y",
+            "commentsForSigner": "Comments to Signer",
+            "rejectionCommentsRequired": "N",
+            "attachPhotoAtApproval": "N",
+            "signatureOptions": {
+                "type": "Y",
+                "draw": "Y",
+                "create": "N",
+                "upload": "Y",
+                "mouse": "Y",
+                "mobileSigning": "N"
+            },
+            "fullname": "Roe",
+            "role": "HR",
+            "email": "rukminim@sutisoft.in",
+            "sendFullySignedDoctoSigner": "Y",
+            "authenticationType": {
+                "type": "passcodeAuth",
+                "codeAtView": "",
+                "codeAtSigning": "psd1"
+            },
+            "documentsRequiredFromSigner": {
+                "max": 20,
+                "min": 1
+            },
+            "fieldType": [{
+                    "type": "signature",
+                    "mandatory": "Y",
+
+                    "positionAtDoc": [{
+                        "dropPositions": "Last",
+                        "top": "30px",
+                        "left": "30px",
+                        "height": "30px",
+                        "width": "30px"
+
+                    }]
+                },
+                {
+                    "type": "initial",
+                    "mandatory": "Y",
+                    "positionAtDoc": [{
+
+                            "pageNo": 1,
+                            "top": "30px",
+                            "left": "30px",
+                            "height": "30px",
+                            "width": "30px"
+
+                        },
+                        {
+
+                            "pageNo": 2,
+                            "top": "30px",
+                            "left": "30px",
+                            "height": "30px",
+                            "width": "30px"
+
+                        }
+                    ]
+                }
+            ],
+            "phone": 56785675
+        }
+    ],
+    "sendNow": "N",
+    "sendSms": "Y",
+    "method": "createRequest",
+    "companyId": 158,
+    "requestName": "Sample Request Cc",
+    "requiredUserNamePasswordAuthentication": "Y",
+    "allowSignersToSeePreviousSignersData": "Y",
+    "multipleSignaturesForSameEmail": "N",
+    "receiveSignedDocAfterRequestCompletion": "Y",
+    "SendSignedDocToOthers": "test@cc1.com;test2@cc2.com",
+    "autoArchiveAfterFullySigned": "Y",
+    "sendReminders": [2, "2 Days"],
+    "setExpiryDate": ["mm/dd/yyyy", "2 days"],
+    "signatureVerificationRequired": "Static",
+    "transactionId": 1,
+    "documentURL": "http://192.168.10.101/NDASutiSoft.pdf",
+    "redirectUri": "https://www.sutisoft.com"
+} 

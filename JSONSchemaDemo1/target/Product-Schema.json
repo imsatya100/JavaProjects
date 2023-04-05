@@ -1,0 +1,704 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#", 
+  "$id": "https://example.com/object1670839376.json",
+  "type": "object",
+  "properties": {
+    "productKey": {
+      "type": "string"
+    },
+    "userId": {
+      "type": "integer"
+    },
+    "signerinfo": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "signerLabel": {
+              "type": "string"
+            },
+            "signerOrder": {
+              "type": "integer",
+		"minimum": 1,
+		"maximum": 10
+            },
+            "mandatory": {
+              "type": "string",
+	      "enum": ["Y", "N"]
+            },
+            "addToAddressBook": {
+              "type": "string",
+	      "enum": ["Y", "N"]
+            },
+            "logicRequired": {
+              "type": "string",
+	      "enum": ["Y", "N"]
+            },
+            "commentsForSigner": {
+              "type": "string"
+            },
+            "rejectionCommentsRequired": {
+              "type": "string",
+	      "enum": ["Y", "N"]
+            },
+            "attachPhotoAtApproval": {
+              "type": "string",
+	      "enum": ["Y", "N"]
+            },
+            "signatureOptions": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+		  "enum": ["Y", "N"]
+                },
+                "draw": {
+                  "type": "string",
+		  "enum": ["Y", "N"]
+                },
+                "create": {
+                  "type": "string",
+		  "enum": ["Y", "N"]
+                },
+                "upload": {
+                  "type": "string",
+		  "enum": ["Y", "N"]
+                },
+                "mouse": {
+                  "type": "string",
+		  "enum": ["Y", "N"]
+                },
+                "mobileSigning": {
+                  "type": "string",
+		  "enum": ["Y", "N"]
+                }
+              },
+              "required": [
+                "type",
+                "draw",
+                "create",
+                "upload",
+                "mouse",
+                "mobileSigning"
+              ]
+            },
+            "fullname": {
+              "type": "string"
+            },
+            "role": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "sendFullySignedDoctoSigner": {
+              "type": "string",
+	      "enum": ["Y", "N"]
+            },
+            "authenticationType": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+		  "enum": ["noAuth" , "passcodeAuth" , "smsAuth"]
+                },
+                "codeAtView": {
+                  "type": "string"
+                },
+                "codeAtSigning": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type",
+                "codeAtView",
+                "codeAtSigning"
+              ]
+            },
+            "documentsRequiredFromSigner": {
+              "type": "object",
+              "properties": {
+                "max": {
+                  "type" :"integer",
+                  "const": 20 
+		  
+                },
+                "min": {
+                  "type" :"integer",
+                 "const": 1 
+		 
+                }
+              },
+              "required": [
+                "max",
+                "min"
+              ]
+            },
+            "fieldType": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": ["signature", "initial"]
+                    },
+                    "mandatory": {
+                      "type": "string",
+		      			"enum": ["Y", "N"]
+                    },
+                    "positionAtDoc": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "dropPositions": {
+                              "type": "string"
+                            },
+                            "top":  { 
+                				"type" : "string",
+               					 "pattern" : "30px"         
+			   				 	},
+                            "left": { 
+								"type" : "string",
+                				"pattern" : "30px"   
+			    				},
+                            "height": { 
+								"type" : "string",
+                				"pattern" : "30px"   
+			   					 },
+                            "width": { 
+								"type" : "string",
+                				"pattern" : "30px"    
+			   					 }
+                          },
+                          "required": [
+                            "dropPositions",
+                            "top",
+                            "left",
+                            "height",
+                            "width"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "mandatory",
+                    "positionAtDoc"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": ["signature", "initial"]
+                    },
+                    "mandatory": {
+                      "type": "string",
+		      		  "enum": ["Y", "N"]
+                    },
+                    "positionAtDoc": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "pageNo": {
+                              "type": "integer"
+                            },
+                            "top": { 
+				"type" : "string",
+                "pattern" : "30px" 
+			    },
+                            "left": { 
+				"type" : "string",
+                "pattern" : "30px" 
+			    },
+                            "height": { 
+				"type" : "string",
+                "pattern" : "30px"  
+			    },
+                            "width": { 
+				"type" : "string",
+                "pattern" : "30px" 
+			    }
+                          },
+                          "required": [
+                            "pageNo",
+                            "top",
+                            "left",
+                            "height",
+                            "width"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "pageNo": {
+                              "type": "integer"
+                            },
+                            "top": { 
+				"type" : "string",
+                "pattern" : "30px" 
+			    },
+                            "left": { 
+				"type" : "string",
+                "pattern" : "30px" 
+			    },
+                            "height":{ 
+				"type" : "string",
+                "pattern" : "30px" 
+			    },
+                            "width": { 
+				"type" : "string",
+                "pattern" : "30px" 
+			    }
+                          },
+                          "required": [
+                            "pageNo",
+                            "top",
+                            "left",
+                            "height",
+                            "width"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "mandatory",
+                    "positionAtDoc"
+                  ]
+                }
+              ]
+            },
+            "phone": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "signerLabel",
+            "signerOrder",
+            "mandatory",
+            "addToAddressBook",
+            "logicRequired",
+            "commentsForSigner",
+            "rejectionCommentsRequired",
+            "attachPhotoAtApproval",
+            "signatureOptions",
+            "fullname",
+            "role",
+            "email",
+            "sendFullySignedDoctoSigner",
+            "authenticationType",
+            "documentsRequiredFromSigner",
+            "fieldType",
+            "phone"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "signerLabel": {
+              "type": "string"
+            },
+            "signerOrder": {
+              "type": "integer",
+	      "minimum": 1,
+	      "maximum": 10
+            },
+            "mandatory": {
+              "type": "string",
+	      "enum": ["Y", "N"]
+            },
+            "addToAddressBook": {
+              "type": "string",
+	      "enum": ["Y", "N"]
+            },
+            "logicRequired": {
+              "type": "string",
+	      "enum": ["Y", "N"]
+            },
+            "commentsForSigner": {
+              "type": "string"
+            },
+            "rejectionCommentsRequired": {
+              "type": "string",
+	      "enum": ["Y", "N"]
+            },
+            "attachPhotoAtApproval": {
+              "type": "string",
+	      "enum": ["Y", "N"]
+            },
+            "signatureOptions": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+		  "enum": ["Y", "N"]
+                },
+                "draw": {
+                  "type": "string",
+		  "enum": ["Y", "N"]
+                },
+                "create": {
+                  "type": "string",
+		 "enum": ["Y", "N"]
+                },
+                "upload": {
+                  "type": "string",
+		  "enum": ["Y", "N"]
+                },
+                "mouse": {
+                  "type": "string",
+		  "enum": ["Y", "N"]
+                },
+                "mobileSigning": {
+                  "type": "string",
+		  "enum": ["Y", "N"]
+                }
+              },
+              "required": [
+                "type",
+                "draw",
+                "create",
+                "upload",
+                "mouse",
+                "mobileSigning"
+              ]
+            },
+            "fullname": {
+              "type": "string"
+            },
+            "role": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "sendFullySignedDoctoSigner": {
+              "type": "string",
+	      "enum": ["Y", "N"]
+            },
+            "authenticationType": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+		  "enum": ["noAuth" , "passcodeAuth" , "smsAuth"]
+                },
+                "codeAtView": {
+                  "type": "string"
+                },
+                "codeAtSigning": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type",
+                "codeAtView",
+                "codeAtSigning"
+              ]
+            },
+            "documentsRequiredFromSigner": {
+              "type": "object",
+              "properties": {
+                "max": {
+                  "type" :"integer",
+                  "const": 20 
+		 
+                },
+                "min": {
+                  "type" :"integer",
+                  "const": 1 
+		 
+                }
+              },
+              "required": [
+                "max",
+                "min"
+              ]
+            },
+            "fieldType": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": ["signature", "initial"]
+                    },
+                    "mandatory": {
+                      "type": "string",
+		      "enum": ["Y", "N"]
+                    },
+                    "positionAtDoc": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "dropPositions": {
+                              "type": "string"
+                            },
+                            "top": { 
+				"type" : "string",
+                "pattern" : "30px" 
+			    },
+                            "left":{ 
+				"type" : "string",
+                "pattern" : "30px"  
+			    },
+                            "height": { 
+				"type" : "string",
+                "pattern" : "30px"  
+			    },
+                            "width": { 
+				"type" : "string",
+                "pattern" : "30px" 
+			    }
+                          },
+                          "required": [
+                            "dropPositions",
+                            "top",
+                            "left",
+                            "height",
+                            "width"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "mandatory",
+                    "positionAtDoc"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": ["signature", "initial"]
+                    },
+                    "mandatory": {
+                      "type": "string",
+		      "enum": ["Y", "N"]
+                    },
+                    "positionAtDoc": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "pageNo": {
+                              "type": "integer"
+                            },
+                            "top": { 
+				"type" : "string",
+                "pattern" : "30px" 
+			    },
+                            "left": { 
+				"type" : "string",
+                "pattern" : "30px" 
+			    },
+                            "height":{ 
+				"type" : "string",
+                "pattern" : "30px"  
+			    },
+                            "width": { 
+				"type" : "string",
+                "pattern" : "30px"  
+			    }
+                          },
+                          "required": [
+                            "pageNo",
+                            "top",
+                            "left",
+                            "height",
+                            "width"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "pageNo": {
+                              "type": "integer"
+                            },
+                            "top": { 
+				"type" : "string",
+                "pattern" : "30px" 
+			    },
+                            "left": { 
+				"type" : "string",
+                "pattern" : "30px"  
+			    },
+                            "height": { 
+				"type" : "string",
+                "pattern" : "30px" 
+			    },
+                            "width": { 
+				"type" : "string",
+                "pattern" : "30px" 
+			    }
+                          },
+                          "required": [
+                            "pageNo",
+                            "top",
+                            "left",
+                            "height",
+                            "width"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "mandatory",
+                    "positionAtDoc"
+                  ]
+                }
+              ]
+            },
+            "phone": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "signerLabel",
+            "signerOrder",
+            "mandatory",
+            "addToAddressBook",
+            "logicRequired",
+            "commentsForSigner",
+            "rejectionCommentsRequired",
+            "attachPhotoAtApproval",
+            "signatureOptions",
+            "fullname",
+            "role",
+            "email",
+            "sendFullySignedDoctoSigner",
+            "authenticationType",
+            "documentsRequiredFromSigner",
+            "fieldType",
+            "phone"
+          ]
+        }
+      ]
+    },
+    "sendNow": {
+      "type": "string",
+     "enum": ["Y", "N"]
+    },
+    "sendSms": {
+      "type": "string",
+      "enum": ["Y", "N"]
+    },
+    "method": {
+      "type": "string"
+    },
+    "companyId": {
+      "type": "integer"
+    },
+    "requestName": {
+      "type": "string"
+    },
+    "requiredUserNamePasswordAuthentication": {
+      "type": "string",
+      "enum": ["Y", "N"]
+    },
+    "allowSignersToSeePreviousSignersData": {
+      "type": "string",
+      "enum": ["Y", "N"]
+    },
+    "multipleSignaturesForSameEmail": {
+      "type": "string",
+      "enum": ["Y", "N"]
+    },
+    "receiveSignedDocAfterRequestCompletion": {
+      "type": "string",
+      "enum": ["Y", "N"]
+    },
+    "SendSignedDocToOthers": {
+      "type": "string"
+    },
+    "autoArchiveAfterFullySigned": {
+      "type": "string",
+      "enum": ["Y", "N"]
+    },
+    "sendReminders": {
+      "type": "array",
+      "items": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "string" ,
+	  "enum": ["8 Hrs" , "12 Hrs" , "1 Day" , "2 Days" , "3 Days" , "4 Days" , 
+	  "5 Days" , "6 Days" , "7 Days" , "8 Days" , "9 Days" , "10 Days" , 
+	  "11 Days" , "12 Days" , "13 Days" , "14 Days" , "15 Days" , "16 Days" , 
+	  "17 Days" , "18 Days" , "19 Days" , "20 Days" , "21 Days" , "22 Days" ,
+	  "23 Days" , "24 Days" , "25 Days" , "26 Days" , "27 Days" , "28 Days" ,
+	  "29 Days" , "30 Days"] 
+	  
+        }
+      ]
+    },
+    "setExpiryDate": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "signatureVerificationRequired": {
+      "type": "string"
+    },
+    "transactionId": {
+      "type": "integer",
+       "uniqueItems": true
+    },
+    "documentURL": {
+      "type": "string"
+    },
+    "redirectUri": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "productKey",
+    "userId",
+    "signerinfo",
+    "sendNow",
+    "sendSms",
+    "method",
+    "companyId",
+    "requestName",
+    "requiredUserNamePasswordAuthentication",
+    "allowSignersToSeePreviousSignersData",
+    "multipleSignaturesForSameEmail",
+    "receiveSignedDocAfterRequestCompletion",
+    "SendSignedDocToOthers",
+    "autoArchiveAfterFullySigned",
+    "sendReminders",
+    "setExpiryDate",
+    "signatureVerificationRequired",
+    "transactionId",
+    "documentURL",
+    "redirectUri"
+  ]
+}
